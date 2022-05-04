@@ -10,7 +10,7 @@ public class Conta {
     private Long numero;
 
     @Column(name = "conta_saldo")
-    private Long saldo;
+    private Double saldo;
 
     public Long getNumero() {
         return numero;
@@ -20,11 +20,11 @@ public class Conta {
         this.numero = numero;
     }
 
-    public Long getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(Long saldo) {
+    public void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
 }
