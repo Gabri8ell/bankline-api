@@ -1,2 +1,6 @@
-package com.mypc.bancklineapi.model;public class MovimentacaoTipo {
+package com.mypc.bancklineapi.model;
+
+public enum MovimentacaoTipo {
+    RECEITA,
+    DESPESA
 }

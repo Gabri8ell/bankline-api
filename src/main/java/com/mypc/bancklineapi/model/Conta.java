@@ -1,2 +1,30 @@
-package com.mypc.bancklineapi.model;public class Conta {
+package com.mypc.bancklineapi.model;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class Conta {
+
+    @Column(name = "conta_numero")
+    private Long numero;
+
+    @Column(name = "conta_saldo")
+    private Long saldo;
+
+    public Long getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Long numero) {
+        this.numero = numero;
+    }
+
+    public Long getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(Long saldo) {
+        this.saldo = saldo;
+    }
 }
