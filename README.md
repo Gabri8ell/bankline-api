@@ -1,4 +1,8 @@
 # Read Me First
+### Api feita em Java
+### Meaven
+###SpringBoot
+###
 The following was discovered as part of building this project:
 
 * The original package name 'com.mypc.banckline-api' is invalid and this project uses 'com.mypc.bancklineapi' instead.
