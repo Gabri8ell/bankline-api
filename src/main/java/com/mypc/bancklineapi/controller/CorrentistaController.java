@@ -8,23 +8,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/correntistas")
+@RequestMapping("correntistas")
 public class CorrentistaController {
     @Autowired
-    private CorrentistaRepository repository;
+    private CorrentistaRepository correntistaRepository;
 
     @Autowired
     private CorrentistaService service;
 
     @GetMapping
     public List<Correntista> findAll(){
-        return repository.findAll();
+        return correntistaRepository.findAll();
+    }
+
+    @GetMapping("/{idCorrentista}")
+    public Optional<Correntista> findAll(@PathVariable("idCorrentista") Integer idCorrentista){
+        return correntistaRepository.findById(idCorrentista);
     }
 
     @PostMapping
     public void save(@RequestBody NovoCorrentista novoCorrentista){
         service.save(novoCorrentista);
+    }
+
+    @RequestMapping(value = "/correntistas/{idCorrentista}", method = RequestMethod.DELETE)
+    public void deleteById(@PathVariable Integer idCorrentista){
+        correntistaRepository.deleteById(idCorrentista);
     }
 }
